@@ -50,7 +50,10 @@ This removes all `target/` directories and `*.wasm` artifacts. The `.gitignore` 
 2. **Every policy change must update SPEC.md and the tests together** — the
    decision table (SPEC §4/§6) and the enforcement-scope statement (SPEC §2 /
    README) must stay word-for-word consistent with the code; that consistency is
-   a review requirement, not a nicety.
+   a review requirement, not a nicety. Reviewers of an enforcement PR should
+   start from [`docs/scenario-matrix.md`](docs/scenario-matrix.md) (§4 row × §6
+   call kind, with the pinning test per cell and the open gaps listed) — it maps
+   the change to the cells it affects and the tests that guard them.
 3. **`clippy::all` and `clippy::pedantic` clean** — enforced in CI with
    `-D warnings`.
 4. **`cargo fmt` clean** — enforced in CI.
